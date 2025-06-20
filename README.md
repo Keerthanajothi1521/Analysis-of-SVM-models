@@ -29,7 +29,55 @@ Model Training & Evaluation:
 Three SVM kernel functions were tested:
 The project evaluated three SVM kernel functions—Linear, Polynomial (Poly), and Radial Basis Function (RBF)—for binary classification of the "Recurred" target variable (with classes "Yes" and "No"). The Linear kernel, best suited for linearly separable data, showed strong overall accuracy but exhibited a slightly larger gap between training and test performance. The Polynomial kernel effectively captured non-linear relationships, achieving the highest training accuracy of all kernels, though with a marginally higher train-test gap that suggested mild overfitting tendencies. Most impressively, the RBF kernel demonstrated superior performance with the highest test accuracy (96.52% for "No" and 91% recall for "Yes") and the smallest generalization gap (just 0.12%), indicating excellent bias-variance tradeoff. All models maintained robust performance metrics for both classes, with the RBF kernel particularly excelling—achieving 97% precision for "Yes" and 99% recall for "No". The "No" class consistently showed stronger metrics across all kernels, while the "Yes" class maintained high but slightly lower performance, with the RBF model delivering 94% F1-score for "Yes" versus 98% for "No". This comprehensive analysis confirms the RBF kernel's optimal balance of accuracy and generalizability while highlighting consistent, high-quality classification performance for both outcome categories.
 
-Repository Structure
+Results:
+Comparative Kernel Performance
+Our evaluation of three SVM kernels revealed distinct strengths in classifying the binary "Recurred" outcome (Yes/No):
+1. Linear Kernel:
+Demonstrated reliable performance with 96.52% test accuracy
+Maintained strong precision for both classes (97% for "Yes", 96% for "No")
+Showed slightly higher variance (1.24% train-test gap) compared to RBF
+2. Polynomial Kernel:
+Achieved peak training accuracy (99.25%), indicating excellent learning capability
+Delivered 97.39% test accuracy with good class balance
+Exhibited the largest train-test gap (1.86%), suggesting mild overfitting tendencies
+3. RBF Kernel (Optimal Performer):
+Best test accuracy (96.52%) with near-perfect generalization (only 0.12% train-test gap)
+Exceptional recall for negative cases (99% for "No")
+Maintained strong positive case identification (91% recall for "Yes")
+Achieved the most balanced F1-scores (94% for "Yes", 98% for "No")
+
+Key Findings
+1. The RBF kernel demonstrated superior generalization with the smallest performance gap between training (96.64%) and testing (96.52%)
+2. All models showed excellent negative class detection, with recall for "No" cases exceeding 96% across all kernels
+3. The Polynomial kernel, while achieving the highest training accuracy, showed signs of overfitting with the largest performance drop during testing
+4. Class imbalance considerations: The models performed slightly better on "No" cases, suggesting potential benefits from:
+-Targeted feature engineering for "Yes" cases
+-Class weighting adjustments
+-Additional data collection for recurrent cases
+
+Practical Implications:
+Healthcare: Predicting patient readmission risks ("Recurred=Yes/No") to optimize care plans.
+Finance: Identifying high-risk loan applicants or fraudulent transactions.
+Marketing: Classifying customer responses (e.g., "Will they subscribe? Yes/No") for targeted campaigns.
+
+Repository Structure:
+SVM_Classification_Analysis/  
+├── data/  
+│   └── ClassificationDataset.csv  
+├── notebooks/  
+│   ├──Preprocessing.ipynb
+│   ├──split data.ipynb
+│   └──evaluation.ipynb
+├── results/  
+│   ├──linear kernel.png
+│   ├──poly kernel.png
+│   └──RBF kernel.png
+├── Visualisations/
+│   ├──SVM accuracy
+│   ├──RBF kernel-class wise performance
+├──Presentation.pptx
+└── README.md  
+
 
 
 
