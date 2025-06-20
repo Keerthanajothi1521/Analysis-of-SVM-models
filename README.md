@@ -46,7 +46,7 @@ Exceptional recall for negative cases (99% for "No")
 Maintained strong positive case identification (91% recall for "Yes")
 Achieved the most balanced F1-scores (94% for "Yes", 98% for "No")
 
-Key Findings
+Key Findings:
 1. The RBF kernel demonstrated superior generalization with the smallest performance gap between training (96.64%) and testing (96.52%)
 2. All models showed excellent negative class detection, with recall for "No" cases exceeding 96% across all kernels
 3. The Polynomial kernel, while achieving the highest training accuracy, showed signs of overfitting with the largest performance drop during testing
